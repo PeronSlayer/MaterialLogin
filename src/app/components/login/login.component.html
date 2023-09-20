@@ -1,0 +1,15 @@
+<div class="loginBox mat-elevation-z5">
+    <h1 style="color:white" class="center">Effettua il Login</h1>
+    <form [formGroup]="loginForm">
+        <mat-form-field >
+            <input matInput placeholder="Username" formControlName="user" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Password" formControlName="password" type="password" />
+        </mat-form-field>
+    </form>
+    <div class="center margin-top">
+        <button mat-raised-button color="primary" type="submit">Login</button>
+    </div>
+    <span class="center margin-top" style="color: white;">Se non sei registrato,</span><a class="signup-link center" routerLink="/signup"> Registrati QUI</a>
+</div>

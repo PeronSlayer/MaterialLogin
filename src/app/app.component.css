@@ -1,0 +1,19 @@
+
+mat-toolbar.mat-primary {
+    background: #a70000;
+    color: #fff;
+}
+
+.content {
+    padding: 32px;
+}
+
+mat-raised-button.mat-primary {
+    background: #a70000;
+    color: #fff;
+}
+
+.right-button{
+    position:absolute;
+    right: 20px;
+  }
