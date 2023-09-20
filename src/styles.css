@@ -18,6 +18,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .center {
     display: flex;
     justify-content: center;
+    
+}
+
+.formStyle {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .margin-top {
