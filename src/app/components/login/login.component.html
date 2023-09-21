@@ -1,9 +1,9 @@
 <body>
 <div class="loginBox mat-elevation-z5">
     <h1 style="color:white; margin-bottom: 25px;" class="center">Effettua il Login</h1>
-    <form [formGroup]="loginForm" class="formStyle" (ngSubmit)="submit()">
+    <form [formGroup]="loginForm" class="formStyle">
         <mat-form-field class="mat-input-wrapper" >
-            <input matInput placeholder="Example@example.com*" formControlName="email"/>
+            <input matInput placeholder="example@example.com*" formControlName="email"/>
             <mat-error *ngIf="email?.errors?.['required']">Email necessaria!</mat-error>
         </mat-form-field>
         <mat-form-field class="mat-input-wrapper">
@@ -12,7 +12,7 @@
         </mat-form-field>
     </form>
     <div class="center margin-top">
-        <button mat-raised-button color="primary" type="submit">Login</button>
+        <button mat-raised-button color="primary" (click)="submit()" [disabled]="!loginForm.valid" >Login</button>
     </div>
     <span class="center margin-top" style="color: white; margin-top: 25px;">Se non sei registrato,</span><a class="signup-link center" routerLink="/signup"> Registrati QUI</a>
 </div>

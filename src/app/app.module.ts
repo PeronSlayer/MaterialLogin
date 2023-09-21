@@ -17,6 +17,8 @@ import { MatInputModule } from '@angular/material/input';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { UserhomeComponent } from './components/userhome/userhome.component';
+
 
 
 
@@ -26,6 +28,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     HomepageComponent,
     LoginComponent,
     SignupComponent,
+    UserhomeComponent,
   ],
   imports: [
     BrowserModule,

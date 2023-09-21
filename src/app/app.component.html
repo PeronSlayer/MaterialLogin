@@ -1,6 +1,21 @@
-<body style="background-color:seagreen;">
+<html>
+<body style="background-color:LightGoldenRodYellow;">
 <mat-toolbar color="primary"><img src="favicon.ico" style="width:40px;height: 40px; margin-right:10px;">Login App
+ 
+ 
   <div class="right-button">
+  <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
+    <span style="font-size: 16px; margin-right: 10px;">Ciao, {{user.email}}!</span>
+    <button mat-button routerLink="" class="toolbar_button">
+      <mat-icon>home</mat-icon>
+      Home
+    </button>
+    <button mat-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+  </ng-container>
+<ng-template #loginButton >
   <button mat-button routerLink="" class="toolbar_button">
     <mat-icon>home</mat-icon>
     Home
@@ -13,9 +28,16 @@
     <mat-icon>app_registration</mat-icon>
     Registrati
   </button>
+</ng-template>
 </div>
 </mat-toolbar>
 <div class="content">
   <router-outlet></router-outlet>
 </div>
 </body>
+<footer>
+  <mat-toolbar color="primary">
+    Ciao, sono un footer! @Alcybercloud.it
+  </mat-toolbar>
+</footer>
+</html>

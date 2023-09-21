@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { user } from '@angular/fire/auth';
-import { FormControl, FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
+import { authState } from '@angular/fire/auth';
+import { NonNullableFormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+
 
 
 
@@ -12,39 +13,44 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
-  loginForm = this.fb.group ({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required])
-  });
- 
   
+
   constructor(
+    private auth: AuthenticationService,
     private router: Router,
-    private fb: NonNullableFormBuilder,
-    private authService: AuthenticationService,
+    private fb: NonNullableFormBuilder
   ) {}
 
-  ngOnInit(): void {
-  }
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+  });
 
-  get email(){
+  
+
+  ngOnInit(): void {}
+
+  get email() {
     return this.loginForm.get('email');
   }
 
-  get password(){
+  get password() {
     return this.loginForm.get('password');
   }
-  submit(){
+
+  submit() {
     const { email, password } = this.loginForm.value;
-    if(!this.loginForm.valid || !email || !password){
-      return
+
+    if (!this.loginForm.valid || !email || !password) {
+      return;
     }
-    this.authService.login(email, password).subscribe(()=> {
-      this.router.navigate(['/homepage']);
-    });
 
+    this.auth
+      .login(email, password)
+      .subscribe(() => {
+        this.router.navigate(['/userhome']);
+      });
   }
-
 }
