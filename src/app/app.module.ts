@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule} from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatMenu, MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormField, MatFormFieldModule} from '@angular/material/form-field';
@@ -18,6 +18,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { UserhomeComponent } from './components/userhome/userhome.component';
+import { SuccessSignupComponent } from './components/success-signup/success-signup.component';
 
 
 
@@ -29,6 +30,7 @@ import { UserhomeComponent } from './components/userhome/userhome.component';
     LoginComponent,
     SignupComponent,
     UserhomeComponent,
+    SuccessSignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,7 @@ import { UserhomeComponent } from './components/userhome/userhome.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
     

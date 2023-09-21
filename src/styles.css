@@ -2,7 +2,8 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.loginBox{
+.loginBox,
+.signupBox{
     display: block;
     max-width: 300px;
     margin: auto;
@@ -54,5 +55,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width:280px !important;
     height: 70px !important;
   }
+
+.mat-input-invalid .mat-input-placeholder {
+    color: white;
+}
+
+.mat-input-invalid .mat-input-ripple {
+    background-color: white;
+}
+
+
+.mat-button.mat-blue {
+    color: blue;
+ }
+ 
+ .mat-raised-button.mat-blue, .mat-flat-button.mat-blue{
+    background-color: blue;
+    color: white;
+ }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

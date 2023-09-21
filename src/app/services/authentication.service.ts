@@ -7,6 +7,7 @@ import {
   updateProfile,
   UserInfo,
   UserCredential,
+  user,
 } from '@angular/fire/auth';
 import { concatMap, from, Observable, of, switchMap } from 'rxjs';
 

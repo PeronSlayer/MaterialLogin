@@ -1,0 +1,11 @@
+.mat-input-invalid .mat-input-placeholder {
+    color: white;
+}
+
+.mat-input-invalid .mat-input-ripple {
+    background-color: white;
+}
+
+.mat-error{
+    color:white;
+}

@@ -1,1 +1,27 @@
-<p>signup works!</p>
+<body>
+    <div class="signupBox mat-elevation-z5">
+        <h1 style="color:white; margin-bottom: 25px;" class="center">Effettua la registrazione</h1>
+        <form [formGroup]="signupForm" class="formStyle">
+            <mat-form-field class="mat-input-wrapper" >
+                <input matInput placeholder="Nome*" formControlName="name"/>
+                <mat-error *ngIf="name?.errors?.['required']">Nome necessario!</mat-error>
+            </mat-form-field>
+            <mat-form-field class="mat-input-wrapper" >
+                <input matInput placeholder="Example@example.com*" formControlName="email"/>
+                <mat-error *ngIf="email?.errors?.['required']">Email necessaria!</mat-error>
+            </mat-form-field>
+            <mat-form-field class="mat-input-wrapper">
+                <input matInput placeholder="Password*" formControlName="password" type="password" />
+                <mat-error *ngIf="password?.errors?.['required']">Password necessaria!</mat-error>
+            </mat-form-field>
+            <mat-form-field class="mat-input-wrapper" >
+                <input matInput placeholder="Conferma password*" formControlName="confirmPassword" type="password"/>
+                <mat-error *ngIf="confirmPassword?.errors?.['required']">Conferma necessaria!</mat-error>
+            </mat-form-field>
+            <mat-error style="text-align: center;" *ngIf="signupForm.errors?.['dismatchPass']">La password deve corrispondere con la conferma!</mat-error>
+        </form>
+        <div class="center margin-top">
+            <button mat-raised-button color="primary" (click)="submit()" >Crea il tuo Account</button>
+            <button mat-raised-button color="primary" style="margin-left: 20px;" routerLink="" >Annulla</button>
+        </div>
+        <span class="center margin-top" style="color: white; margin-top: 25px;">Se sei già registrato,</span><a class="signup-link center" routerLink="/login"> Effetua il Login</a>
